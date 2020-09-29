@@ -1,19 +1,11 @@
 import React from 'react';
-import {items} from './items.js';
-import {styles} from './styles.js';
+import {items} from './components/items.js';
+import {styles} from './components/styles.js';
+import ItemsList from './components/ItemList.js'
 
 
 function App() {
 
-  const itemsList = items.map( item => 
-    <div key={item.id}>
-      <img style={styles.itemImage} src={item.image} alt={item.name}></img>
-      <div style={styles.text}>
-        <h3>{item.name}</h3>
-        <p>{item.price} SR</p>
-      </div>
-    </div>
-    )
   return (
     <div>
       <header>
@@ -25,7 +17,7 @@ function App() {
         <img style={styles.bakeryImage} src="https://cdn.concreteplayground.com/content/uploads/2020/01/MIlkwoodbakeryberry-insta.jpg" 
         alt="shop pic" ></img>
       </header>
-      {itemsList}
+      <ItemsList items={items}/>
 
     </div>
   );
