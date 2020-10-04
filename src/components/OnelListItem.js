@@ -1,17 +1,16 @@
 import React from 'react';
 
-import {styles} from './styles'
+import {ItemWrapper} from './styles'
 
 const OneListItem = (props) => {
     const { item } = props
     return (
-        <div >
-            <img style={styles.itemImage} src={item.image} alt={item.name}></img>
-            <div style={styles.text}>
-            <h3>{item.name}</h3>
-            <p>{item.price} SR</p>
-            </div>
-        </div>
+        
+        <ItemWrapper>
+            <img src={item.image} alt={item.name}></img>
+            <p>{item.name}</p>
+            <p className='price'>{item.price} SR</p>
+        </ItemWrapper>
     )
 }
 
